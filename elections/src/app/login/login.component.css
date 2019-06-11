@@ -1,0 +1,14 @@
+:host {
+    background-color: #545454;
+    font-size: 1.5em;
+  }
+.inventory-body {
+    position: fixed;
+    min-width: 100%;
+    background-image: url("https://www.in.gov/sos/elections/images/elections-3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    height: -webkit-fill-available;
+    }
