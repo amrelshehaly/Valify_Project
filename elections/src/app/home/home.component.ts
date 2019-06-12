@@ -15,6 +15,9 @@ export class HomeComponent implements OnInit {
   sortbyname : String;
 
   searchfor : string;
+
+  showingResults : number;
+
   // sortbydate : String ;
 
   constructor(private candiService : CandidatesService) {  }
@@ -37,6 +40,12 @@ export class HomeComponent implements OnInit {
       return  res.name.toLocaleLowerCase().match(this.searchfor.toLocaleLowerCase()) || 
       res.description.toLocaleLowerCase().match(this.searchfor.toLocaleLowerCase());
     });
+  }
+
+  Incr(candidate : any){
+  let a  =  this.candiService.getcandidates().find(x => x.name === candidate.name);
+  this.showingResults = a.results ++ ;
+    console.log(this.showingResults);
   }
 
   ngOnInit() {

@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { UiModule } from './ui/ui.module';
 import { AscendingPipe } from './ascending.pipe';
 import { SortdatePipe } from './sortdate.pipe';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SortdatePipe } from './sortdate.pipe';
     LoginComponent,
     HomeComponent,
     AscendingPipe,
-    SortdatePipe
+    SortdatePipe,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

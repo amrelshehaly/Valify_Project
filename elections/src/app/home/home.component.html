@@ -33,18 +33,18 @@
     <!-- <button (click)="sortByname()" >sort by name</button>
     <button (click)="sortBydate()" >sort by Date</button> -->
 
+    <!-- card-columns -->
+ <div class="">
 
- <div class="card-columns">
-
-    <div class="card" style="width: 18rem; margin-bottom: 5%; height: 20%;" *ngFor=" let candidate of (ShowingCandidates | ascending:sortbyname)" >
-        <img class="card-img-top" src={{candidate.images}}  alt="Card image cap">
-        <div class="card-body">
+    <div class="card" style="width: 100%; margin-bottom: 5%; height: 20%;" *ngFor=" let candidate of (ShowingCandidates | ascending:sortbyname)" >
+       <div class="container"><img class="card-img-top" style="width: 20%;" src={{candidate.images}}  alt="Card image cap"></div> 
+        <div class="card-body" style="width:28%;margin-top: -12%;margin-left: 32%">
           <h5 class="card-title">{{candidate.name}}</h5>
           <h4 class="card-title">{{ candidate.dateCreation | date}}</h4>
           <p class="card-text">{{ candidate.description }}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
+            <button type="button" (click)="Incr(candidate)" class="btn btn-warning">Vote</button>
         </ul>
       </div>
  </div>
