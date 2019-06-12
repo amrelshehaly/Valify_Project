@@ -12,6 +12,10 @@ export class HomeComponent implements OnInit {
 
   ShowingCandidates : Candidate[] 
 
+  sortbyname : String;
+
+  // sortbydate : String ;
+
   constructor(private candiService : CandidatesService) {  }
 
   getTheCandies(){
@@ -19,8 +23,17 @@ export class HomeComponent implements OnInit {
     console.log("ShowingCandidates")
   }
 
+  sortByname(){
+    return this.sortbyname = 'name';
+  }
+
+  sortBydate(){
+     return this.sortbyname = 'dateCreation';
+  }
+
   ngOnInit() {
-   this.getTheCandies()
+   this.getTheCandies();
+   this.sortBydate()
   }
 
 }

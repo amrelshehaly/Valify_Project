@@ -9,10 +9,23 @@ import * as _ from 'lodash';
 })
 export class AscendingPipe implements PipeTransform {
 
-  transform(value : Candidate[],column: string, order = '') {
-    if (!value || !column || column === '' || order === '') { return value; } // no array
+  transform(value : Candidate[],column: string) {
+    if (!value || !column || column === '') { return value; } // no array
     if (value.length <= 1) { return value; } // array with only one item
-    return _.orderBy(value, [column], [order]);
+    console.log(value.sort((a,b) => a.name.localeCompare(b.name)))
+    if(column === 'name'){
+      return value.sort((a,b) => a.name.localeCompare(b.name));
+    }
+    // console.log(value.sort((val1, val2)=> {return (val1.dateCreation).getDate() -  
+    //   (val2.dateCreation).getDate()}));
+    // return value.sort((val1, val2)=> {return (val1.dateCreation).getDate() -  
+    //   (val2.dateCreation).getDate()});
+
+    return value.sort((a, b) => {
+      let aLC: Number = a.dateCreation.getTime();
+      let bLC: Number = b.dateCreation.getTime();
+      return aLC < bLC ? -1 : (aLC > bLC ? 1 : 0);
+  });
   }
 
 }

@@ -6,11 +6,38 @@
       </p>
     </div>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">Order By :</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <button (click)="sortByname()" >sort by name</button>
+            </li>
+            <li class="nav-item">
+                <button (click)="sortBydate()" >sort by Date</button>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
 
-    <div class="card container" style="width: 100%; margin-bottom: 5%" *ngFor=" let candidate of (ShowingCandidates | ascending:'name':'asc|desc')" >
-        <img class="card-img-top" src="/assets/img/071217-rock-president-lead.jpg" style="width: 18rem;" alt="Card image cap">
+    <!-- <button (click)="sortByname()" >sort by name</button>
+    <button (click)="sortBydate()" >sort by Date</button> -->
+
+
+
+    <div class="card container" style="width: 18rem; margin-bottom: 5%; height: 20%;" *ngFor=" let candidate of (ShowingCandidates | ascending:sortbyname)" >
+        <img class="card-img-top" src={{candidate.images}}  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{candidate.name}}</h5>
+          <h4 class="card-title">{{ candidate.dateCreation | date}}</h4>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         <ul class="list-group list-group-flush">

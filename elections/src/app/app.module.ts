@@ -11,13 +11,15 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { UiModule } from './ui/ui.module';
 import { AscendingPipe } from './ascending.pipe';
+import { SortdatePipe } from './sortdate.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    AscendingPipe
+    AscendingPipe,
+    SortdatePipe
   ],
   imports: [
     BrowserModule,

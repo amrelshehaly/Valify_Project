@@ -1,10 +1,10 @@
 export class Candidate {
     id:number;
-    name:String;
-    description:String;
-    startDate:String;
-    endDate:String;
-    dateCreation:String;
+    name:string;
+    description:string;
+    startDate:string;
+    endDate:string;
+    dateCreation:Date;
     results:number;
-    images:String;
+    images:string;
 }
