@@ -22,31 +22,32 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchfor" placeholder="Search" name="search" (input)="searchingtext()" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
       </nav>
 
+      {{this.searchfor}}
+
     <!-- <button (click)="sortByname()" >sort by name</button>
     <button (click)="sortBydate()" >sort by Date</button> -->
 
 
+ <div class="card-columns">
 
-    <div class="card container" style="width: 18rem; margin-bottom: 5%; height: 20%;" *ngFor=" let candidate of (ShowingCandidates | ascending:sortbyname)" >
+    <div class="card" style="width: 18rem; margin-bottom: 5%; height: 20%;" *ngFor=" let candidate of (ShowingCandidates | ascending:sortbyname)" >
         <img class="card-img-top" src={{candidate.images}}  alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{candidate.name}}</h5>
           <h4 class="card-title">{{ candidate.dateCreation | date}}</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">{{ candidate.description }}</p>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
         </ul>
       </div>
-   
+ </div>
 
   </app-layout>
 

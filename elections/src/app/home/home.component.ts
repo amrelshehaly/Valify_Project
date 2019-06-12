@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   sortbyname : String;
 
+  searchfor : string;
   // sortbydate : String ;
 
   constructor(private candiService : CandidatesService) {  }
@@ -29,6 +30,13 @@ export class HomeComponent implements OnInit {
 
   sortBydate(){
      return this.sortbyname = 'dateCreation';
+  }
+
+  searchingtext(){
+    this.ShowingCandidates = this.candiService.getcandidates().filter(res=>{
+      return  res.name.toLocaleLowerCase().match(this.searchfor.toLocaleLowerCase()) || 
+      res.description.toLocaleLowerCase().match(this.searchfor.toLocaleLowerCase());
+    });
   }
 
   ngOnInit() {
