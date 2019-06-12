@@ -1,3 +1,25 @@
-<p>
-  home works!
-</p>
+<app-layout>
+    <div class="jumbotron">
+      <h1>Angular CLI v6 + Bootstrap & FontAwesome</h1>
+      <p>
+        In this tutorial you learn how to use Angular CLI v6 with Bootstrap and FontAwesome!
+      </p>
+    </div>
+
+
+    <div class="card container" style="width: 100%; margin-bottom: 5%" *ngFor=" let candidate of (ShowingCandidates | ascending:'name':'asc|desc')" >
+        <img class="card-img-top" src="/assets/img/071217-rock-president-lead.jpg" style="width: 18rem;" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{candidate.name}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+   
+
+  </app-layout>
+

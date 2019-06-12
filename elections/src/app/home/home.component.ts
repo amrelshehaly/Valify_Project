@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CandidatesService } from '../candidates.service'
+import { Candidate } from '../candidates'
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  ShowingCandidates : Candidate[] 
+
+  constructor(private candiService : CandidatesService) {  }
+
+  getTheCandies(){
+    this.ShowingCandidates = this.candiService.getcandidates();
+    console.log("ShowingCandidates")
+  }
 
   ngOnInit() {
+   this.getTheCandies()
   }
 
 }
