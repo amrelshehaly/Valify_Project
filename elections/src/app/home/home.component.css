@@ -1,1 +1,12 @@
 .beside {display:inline-block;}
+
+.inventory-body {
+    position: inherit;
+    min-width: 100%;
+    background-image: url("https://steamuserimages-a.akamaihd.net/ugc/272841093786052708/C99B8A1101251F6A6E6DAB92A7999DB0360C3061/");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    }

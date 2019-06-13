@@ -1,8 +1,9 @@
+<body class="inventory-body">
 <app-layout>
     <div class="jumbotron">
-      <h1>Angular CLI v6 + Bootstrap & FontAwesome</h1>
+      <h1>Avenger Candidates</h1>
       <p>
-        In this tutorial you learn how to use Angular CLI v6 with Bootstrap and FontAwesome!
+       Vote for the best avenger for you !
       </p>
     </div>
 
@@ -15,10 +16,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <button (click)="sortByname()" >sort by name</button>
+                <button class="btn btn-success" (click)="sortByname()" >sort by name</button>
             </li>
             <li class="nav-item">
-                <button (click)="sortBydate()" >sort by Date</button>
+                <button class="btn btn-success" (click)="sortBydate()" >sort by Date</button>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -50,4 +51,6 @@
  </div>
 
   </app-layout>
+
+</body>
 
